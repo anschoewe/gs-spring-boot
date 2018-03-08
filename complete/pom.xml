@@ -39,6 +39,13 @@
     </properties>
 
     <build>
+            <resources>
+            <resource>
+                <directory>${project.basedir}/wwwroot</directory>
+                <filtering>true</filtering>
+                <targetPath>${basedir}/target</targetPath>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -63,9 +70,10 @@
                     <authentication>
                         <serverId>azure-auth</serverId>
                     </authentication>
-                    <resourceGroup>maven-plugin</resourceGroup>
-                    <appName>maven-web-app-${maven.build.timestamp}</appName>
+                    <resourceGroup>myAppServiceGroup</resourceGroup>
+                    <appName>helloAppXXXXX1</appName>
                     <region>westus</region>
+                    <!-- Newest Java 1.8 version -->
                     <javaVersion>1.8</javaVersion>
                     <deploymentType>ftp</deploymentType>
                     <stopAppDuringDeployment>true</stopAppDuringDeployment>
